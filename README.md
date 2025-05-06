@@ -24,3 +24,14 @@
 
 ### Sandbox
 ![Sandbox](./img/sandbox.png)
+
+
+### GraphQL TODO
+> Se crearon los metodo para el consumo del  los servicios para los todos, crear, actualizar, eliminar y consultar todos  se adiciono el  aggregation para la consulta de todos los todos
+
+### Ejemplo de Mutaciones
+![Sandbox](./img/mutations.png)
+
+
+### Ejemplo de query y agregaciones
+![Sandbox](./img/query-agregations.png)

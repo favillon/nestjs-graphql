@@ -7,6 +7,9 @@ import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HelloWorldModule } from './hello-world/hello-world.module';
+import { TodoModule } from './todo/todo.module';
+import { TodoResolver } from './todo/todo.resolver';
+import { TodoService } from './todo/todo.service';
 
 @Module({
   imports: [
@@ -19,8 +22,9 @@ import { HelloWorldModule } from './hello-world/hello-world.module';
       ]
     }),
     HelloWorldModule,
+    TodoModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, TodoResolver, TodoService],
 })
 export class AppModule {}

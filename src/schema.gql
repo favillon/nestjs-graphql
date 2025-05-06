@@ -2,7 +2,36 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Todo {
+  id: Int!
+  title: String!
+  description: String!
+  done: Boolean!
+}
+
+"""Todo quick Aggregation"""
+type AggregationType {
+  """Total Todos"""
+  totalTodos: Int!
+
+  """Completed Todos"""
+  completedTodos: Int!
+
+  """PendingTodos"""
+  pendingTodos: Int!
+}
+
 type Query {
+  todos(
+    """Completed status of the Todo"""
+    completed: Boolean
+  ): [Todo!]!
+  todo(id: Int!): Todo!
+  totaTodos: Int!
+  completedTodos: Int!
+  pendingTodos: Int!
+  aggregations: AggregationType!
+
   """Method to say Hello World"""
   sayHello: String!
 
@@ -14,4 +43,29 @@ type Query {
 
   """Method to get Random Number From Zero to N with default value"""
   randomFromZeroToWhitDefaultNumber(to: Int): Int!
+}
+
+type Mutation {
+  createTodo(createTodoInput: CreateTodoInput!): Todo!
+  updateTodo(updateTodoInput: UpdateTodoInput!): Todo!
+  deleteTodo(id: Int!): Boolean!
+}
+
+input CreateTodoInput {
+  title: String!
+  description: String!
+}
+
+input UpdateTodoInput {
+  """id of the Todo"""
+  id: Int!
+
+  """Title of the Todo"""
+  title: String
+
+  """Desciption of the Todo"""
+  description: String
+
+  """Done status of the Todo"""
+  done: Boolean
 }
