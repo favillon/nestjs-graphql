@@ -1,0 +1,17 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  """Method to say Hello World"""
+  sayHello: String!
+
+  """Method to get Random Number"""
+  randomNumber: Float!
+
+  """Method to get Random Number From Zero to N"""
+  randomFromZeroTo(to: Int!): Int!
+
+  """Method to get Random Number From Zero to N with default value"""
+  randomFromZeroToWhitDefaultNumber(to: Int): Int!
+}
